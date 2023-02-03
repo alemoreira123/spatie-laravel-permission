@@ -3,9 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Role;
 
 class UserSeeder extends Seeder
 {
@@ -16,9 +14,14 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        /** @var User $user */
-        $user = app(User::class);
-        $user = $user->factory()->create();
-        $user->assignRole('manager');
+        /** @var User $userManager */
+        $userManager = app(User::class);
+        $userManager = $userManager->factory()->create();
+        $userManager->assignRole('manager');
+
+        /** @var User $userEmitter */
+        $userEmitter = app(User::class);
+        $userEmitter = $userEmitter->factory()->create();
+        $userEmitter->assignRole('emitter');
     }
 }
