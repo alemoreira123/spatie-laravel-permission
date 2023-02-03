@@ -14,7 +14,7 @@ class ModelHasRolesSeeder extends Seeder
 {
     public function run()
     {
-//        ModelHasRole::create([
+//        ModelHasRole::query()->updateOrCreate([
 //            'role_id' => 1,
 //            'model_type' => User::class,
 //            'model_id' => 1,

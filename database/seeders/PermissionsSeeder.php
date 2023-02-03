@@ -15,9 +15,9 @@ class PermissionsSeeder extends Seeder
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
         // create permissions
-        Permission::create(['name' => 'edit articles']);
-        Permission::create(['name' => 'delete articles']);
-        Permission::create(['name' => 'publish articles']);
-        Permission::create(['name' => 'unpublish articles']);
+        Permission::query()->updateOrCreate(['name' => 'edit articles']);
+        Permission::query()->updateOrCreate(['name' => 'delete articles']);
+        Permission::query()->updateOrCreate(['name' => 'publish articles']);
+        Permission::query()->updateOrCreate(['name' => 'unpublish articles']);
     }
 }

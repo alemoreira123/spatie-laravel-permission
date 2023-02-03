@@ -19,7 +19,7 @@ $ ./vendor/bin/sail up -d
 
 ### Rodar migrations e seeders:
 <pre>
-$ ./vendor/bin/sail artisan migrate:refresh --seed
+$ ./vendor/bin/sail artisan migrate --seed
 </pre>
 
 ### Rodar testes unitários:

@@ -13,7 +13,7 @@ class ModelHasPermissionsSeeder extends Seeder
 {
     public function run()
     {
-//        ModelHasPermission::create([
+//        ModelHasPermission::query()->updateOrCreate([
 //            'permission_id' => 1,
 //            'model_type' => User::class,
 //            'model_id' => 1,

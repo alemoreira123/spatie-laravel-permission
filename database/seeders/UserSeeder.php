@@ -15,13 +15,19 @@ class UserSeeder extends Seeder
     public function run()
     {
         /** @var User $userManager */
-        $userManager = app(User::class);
-        $userManager = $userManager->factory()->create();
+        $userManager = User::query()->updateOrCreate([
+            'name' => fake()->name,
+            'email' => fake()->email,
+            'password' => fake()->password(),
+        ]);
         $userManager->assignRole('manager');
 
         /** @var User $userEmitter */
-        $userEmitter = app(User::class);
-        $userEmitter = $userEmitter->factory()->create();
+        $userEmitter = User::query()->updateOrCreate([
+            'name' => fake()->name,
+            'email' => fake()->email,
+            'password' => fake()->password(),
+        ]);
         $userEmitter->assignRole('emitter');
     }
 }

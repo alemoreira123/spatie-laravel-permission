@@ -16,11 +16,11 @@ class RolesSeeder extends Seeder
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
         /* @var Role $roleManager */
-        $roleManager = Role::create(['name' => 'manager']);
+        $roleManager = Role::query()->updateOrCreate(['name' => 'manager']);
         $roleManager->givePermissionTo(Permission::all());
 
         /* @var Role $roleEmitter */
-        $roleEmitter = Role::create(['name' => 'emitter']);
+        $roleEmitter = Role::query()->updateOrCreate(['name' => 'emitter']);
         $roleEmitter->givePermissionTo(['publish articles', 'unpublish articles']);
     }
 }
